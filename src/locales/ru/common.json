@@ -1,0 +1,5 @@
+{
+  "welcome": "Добро пожаловать",
+  "description": "Это пример i18n в React {{key}}",
+  "switch": "switch"
+}
