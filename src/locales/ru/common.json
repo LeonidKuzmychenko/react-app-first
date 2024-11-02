@@ -1,5 +1,13 @@
 {
-  "welcome": "Добро пожаловать",
-  "description": "Это пример i18n в React {{key}}",
-  "switch": "switch"
+  "language-ru": "RU",
+  "language-en": "EN",
+  "theme-light-mode": "Темная тема",
+  "theme-dark-mode": "Светлая тема",
+  "monday": "понедельник",
+  "tuesday": "вторник",
+  "wednesday": "среда",
+  "thursday": "четверг",
+  "friday": "пятница",
+  "saturday": "суббота",
+  "sunday": "воскресенье"
 }

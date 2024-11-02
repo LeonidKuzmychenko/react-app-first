@@ -1,34 +1,22 @@
 import React from 'react';
-import './App.css';
-import Header from "./Header";
-import Main2 from "./Main2";
-import Footer from "./Footer";
-import Main1 from "./Main1";
+import './styles/App.css';
+import DayOfWeek from "./pages/DayOfWeek";
 import {BrowserRouter, Route, Routes} from "react-router-dom";
-import {useTranslation} from 'react-i18next';
+import Header from "./components/high/Header";
+import Footer from "./components/high/Footer";
+import {DaysOfWeek} from "./enums/daysOfWeek";
 
 function App() {
-    const {t, i18n} = useTranslation();  // Хук для работы с переводами
-
+    const daysList = Object.values(DaysOfWeek);
     return (
         <div className="flex flex-col min-h-screen">
             <BrowserRouter>
                 <Header/>
                 <Routes>
-                    <Route path="/" element={
-                        <Main1>
-                            <p className="text-xl">
-                                {t('welcome')}
-                            </p>
-                        </Main1>
-                    }/>
-                    <Route path="/main2" element={
-                        <Main2>
-                            <p className="text-xl">
-                                {t('welcome')} page2
-                            </p>
-                        </Main2>
-                    }/>
+                    <Route path="/" element={<DayOfWeek day="monday" />} />
+                    {daysList.map((day) => (
+                        <Route key={day} path={`/${day}`} element={<DayOfWeek day={day} />} />
+                    ))}
                 </Routes>
                 <Footer/>
             </BrowserRouter>
